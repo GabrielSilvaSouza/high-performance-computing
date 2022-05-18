@@ -1,15 +1,17 @@
 PROGRAM matrix
 	implicit none
 	
-	INTEGER, PARAMETER ::msize = 23169
+	!!23169
+	INTEGER, PARAMETER ::msize = 10000
 	INTEGER :: i, j
-	REAL :: s
+	REAL :: s, start, finish
 	
 	REAL :: A(msize, msize)
 	REAL :: x(msize),b(msize)
 	!!REAL :: A(msize,msize)
 	!!REAL :: x(msize)
 	!!REAL :: b(msize)
+	OPEN(10, file='data.txt')
 
 
 DO i= 1, msize
@@ -24,12 +26,18 @@ DO i= 1, msize
 	END DO
 END DO
 
+CALL CPU_TIME(start)
 DO i = 1, msize
 	DO j = 1, msize
 	b(i) = b(i) + A(i,j)*x(i)
+	
+
 	END DO
 END DO
+CALL CPU_TIME(finish)
+print *,finish-start
 
+!!WRITE(10,*)  b
 
 
 !!print*, (b(i), i=1,msize)
