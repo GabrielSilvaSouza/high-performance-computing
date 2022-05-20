@@ -3,10 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-/////////////* Programa do Livro *//////////////////////
-
-
-//***************************************************//
 
 void matmult(int n, double** A, double* B, double* C) {
 	for(int i = 0; i < n; i++) {

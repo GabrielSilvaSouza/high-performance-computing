@@ -2,7 +2,7 @@ PROGRAM matrix
 	implicit none
 	
 	!!23169
-	INTEGER, PARAMETER ::msize = 50500
+	INTEGER, PARAMETER ::msize = 50000
 	INTEGER :: i, j, K
 	REAL :: s , START, FINISH
 	REAL, ALLOCATABLE, DIMENSION (:, :):: A
@@ -14,8 +14,8 @@ PROGRAM matrix
 	ALLOCATE(b(msize))
 	
 
-	DO i= 1, msize, 10000
-		DO j = 1, msize, 10000
+	DO i= 1, msize, 500
+		DO j = 1, msize, 500
 			CALL RANDOM_NUMBER(s)
 			A(i,j) = s
 			CALL RANDOM_NUMBER(s) 
