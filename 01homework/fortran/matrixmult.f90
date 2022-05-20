@@ -2,26 +2,33 @@ PROGRAM matrix
 	implicit none
 	
 	!!23169
-	INTEGER, PARAMETER ::msize = 24000
+	INTEGER, PARAMETER ::msize = 50500
 	INTEGER :: i, j, K
-	REAL :: s, start, finish
-	REAL :: A(msize, msize), x(msize),b(msize)
+	REAL :: s , START, FINISH
+	REAL, ALLOCATABLE, DIMENSION (:, :):: A
+	REAL, ALLOCATABLE, DIMENSION (:) :: x,b
 	OPEN(10, file='data.txt')
 
-DO K = 1, 30
-	DO i= 1, msize
-		DO j = 1, msize
-			
+	ALLOCATE(A(msize, msize))
+	ALLOCATE(x(msize))
+	ALLOCATE(b(msize))
+	
+
+	DO i= 1, msize, 10000
+		DO j = 1, msize, 10000
 			CALL RANDOM_NUMBER(s)
 			A(i,j) = s
 			CALL RANDOM_NUMBER(s) 
 			x(j) = s
 			b(j) = 0
-			
 		END DO
+		CALL CALC(A,x,b,msize)
 	END DO
-	CALL CALC(A,x,b,msize)
-END DO
+	
+	DEALLOCATE(A)
+	DEALLOCATE(x)
+	DEALLOCATE(b)
+
 
 
 
@@ -36,8 +43,8 @@ SUBROUTINE CALC(P,Q,R,TAM)
 
 
 	CALL CPU_TIME(START)
-		DO I = 1, TAM
-			DO J = 1, TAM
+		DO I = 1, TAM, 9
+			DO J = 1, TAM, 9
 			R(I) = R(I) + P(I,J)*Q(I)
 			END DO
 		END DO
@@ -46,3 +53,7 @@ SUBROUTINE CALC(P,Q,R,TAM)
 	RETURN
 
 END SUBROUTINE CALC
+
+
+
+
