@@ -1,0 +1,23 @@
+N,CPU,t(s)
+500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.000691
+1000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.002827
+1500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.006417
+2000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.011414
+2500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.017893
+3000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.026019
+3500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.035383
+4000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.045721
+4500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.057829
+5000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.072035
+5500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.087089
+6000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.103451
+6500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.120966
+7000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.140746
+7500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.161843
+8000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.183434
+8500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.206996
+9000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.232505
+9500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.259990
+10000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.287071
+10500,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.316599
+11000,2.5 GHz Intel Core i5 7th Generation Dual-Core,0.549450

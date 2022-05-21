@@ -5,8 +5,8 @@
 
 
 void matmult(int n, double** A, double* B, double* C) {
-	for(int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
+	for(int j = 0; j < n; j++) {
+		for (int i = 0; i < n; i++) {
 		 C[j] = A[i][j] * B[j];
 		}
 	}
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     FILE *out_file = fopen("results.csv", "w");
     fprintf(out_file, "N,CPU,t(s)\n");
 
-    for (int dim = 10; dim <=n; dim+=10000 ){
+    for (int dim = 100; dim <=n; dim+=50 ){
         clock_t start, end;
         double cpu_time_used;
 

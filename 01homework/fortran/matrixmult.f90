@@ -7,15 +7,15 @@ PROGRAM matrix
 	REAL :: s , START, FINISH
 	REAL, ALLOCATABLE, DIMENSION (:, :):: A
 	REAL, ALLOCATABLE, DIMENSION (:) :: x,b
-	OPEN(10, file='data.txt')
+	OPEN(10, file='data.csv')
 
 	ALLOCATE(A(msize, msize))
 	ALLOCATE(x(msize))
 	ALLOCATE(b(msize))
 	
 
-	DO i= 1, msize, 500
-		DO j = 1, msize, 500
+	DO j= 1, msize, 500
+		DO i = 1, msize, 500
 			CALL RANDOM_NUMBER(s)
 			A(i,j) = s
 			CALL RANDOM_NUMBER(s) 
@@ -28,8 +28,6 @@ PROGRAM matrix
 	DEALLOCATE(A)
 	DEALLOCATE(x)
 	DEALLOCATE(b)
-
-
 
 
 END PROGRAM matrix
