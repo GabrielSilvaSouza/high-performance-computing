@@ -9,6 +9,8 @@
 
 typedef double Real;
 
+
+
 inline double seconds(void)
 {
     static const double secs_per_tick = 1.0 / CLOCKS_PER_SEC;
@@ -74,9 +76,8 @@ void Grid :: setBCFunc(Real (*f)(const Real, const Real))
     ymin = 0.0;
     xmax = 1.0;
     ymax = 1.0;
-    /* Left and right sides. */
-    #pragma omp parallel for default(none) \
-                private(xmin,xmax,ymin,ymax) shared(u,nx,dy,y)
+
+    #pragma omp for 
     for (int j=0; j<ny; ++j) {
         y = j*dy;
         u[0][j] = f(xmin, y);
@@ -165,9 +166,11 @@ int main(int argc, char * argv[])
 {
     int nx, n_iter;
     Real eps;
-    Real t_start, t_end;
+    double t_start, t_end;
     std::cout << "Enter nx n_iter eps --> ";
     std::cin >> nx >> n_iter >> eps;
+    
+    //omp_set_num_threads(32);
 
     Grid *g = new Grid(nx, nx);
     g->setBCFunc(BC);
